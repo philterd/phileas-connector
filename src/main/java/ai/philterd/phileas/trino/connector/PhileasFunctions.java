@@ -45,7 +45,7 @@ public final class PhileasFunctions {
     @SqlType("varchar")
     public static Slice redact(@SqlType("varchar") Slice s) {
         try {
-            return s == null ? null : slice(filterService.filter(policy, "<cxt>", "<doc>", s.toStringUtf8(), MimeType.TEXT_PLAIN).filteredText());
+            return s == null ? null : slice(filterService.filter(policy, "<cxt>", "<doc>", s.toStringUtf8(), MimeType.TEXT_PLAIN).getFilteredText());
         } catch (Exception e) {
             log.error(e);
             return null;
