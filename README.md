@@ -43,4 +43,4 @@ select phileas_redact('my email is rik@resurfacd.io')
 ```
 
 ---
-Copyright 2024 Philterd, LLC @ https://www.philterd.ai
+Copyright 2024-2025 Philterd, LLC @ https://www.philterd.ai
