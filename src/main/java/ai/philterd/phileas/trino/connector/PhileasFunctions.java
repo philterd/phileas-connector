@@ -1,5 +1,5 @@
 /*
- *     Copyright 2024 Philterd, LLC @ https://www.philterd.ai
+ *     Copyright 2024-2025 Philterd, LLC @ https://www.philterd.ai
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,7 +45,7 @@ public final class PhileasFunctions {
     @SqlType("varchar")
     public static Slice redact(@SqlType("varchar") Slice s) {
         try {
-            return s == null ? null : slice(filterService.filter(policy, "<cxt>", "<doc>", s.toStringUtf8(), MimeType.TEXT_PLAIN).filteredText());
+            return s == null ? null : slice(filterService.filter(policy, "<cxt>", "<doc>", s.toStringUtf8(), MimeType.TEXT_PLAIN).getFilteredText());
         } catch (Exception e) {
             log.error(e);
             return null;
